@@ -1,64 +1,838 @@
-<footer class="relative bg-slate-950 pt-24 pb-12 px-6 border-t border-blue-900/20">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="grid md:grid-cols-4 gap-12 mb-20 text-left">
-                
-                <div class="flex flex-col items-start space-y-6">
-                    <div class="flex items-center gap-3">
-                        <img src="https://i.ibb.co/mWXRYLD/liftapp.png" class="w-8 h-8 opacity-80" alt="ON2GO">
-                        <span class="text-xl font-black text-white tracking-tighter uppercase">ON2GO</span>
-                    </div>
-                    <div class="text-[10px] font-bold text-green-400 uppercase tracking-widest bg-green-900/10 inline-flex px-3 py-1 rounded-full border border-green-500/20">System Online v4.0 [cite: 133, 145]</div>
-                </div>
+ <!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ON2GO | Infraestrutura de Inteligência Artificial</title>
+    <meta name="description" content="Automação corporativa com IA e Performance para Marketplaces de Elite.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #e2e8f0; }
+        .glass { background: rgba(2, 6, 23, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .gradient-text { -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        @keyframes fade-in-up { 
+            from { opacity: 0; transform: translateY(20px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+            50% { transform: scale(1.1); box-shadow: 0 0 20px 10px rgba(34, 197, 94, 0.3); }
+        }
+        .animate-glow { animation: glow-pulse 3s infinite ease-in-out; }
 
-                <div class="flex flex-col items-start">
-                    <h4 class="text-white font-black uppercase tracking-widest text-[10px] mb-6 border-b border-white/10 pb-2 w-full">IA Business [cite: 134]</h4>
-                    <ul class="space-y-4 text-xs text-slate-400 font-bold uppercase tracking-widest w-full">
-                        <li><button onclick="switchView('ia')" class="hover:text-blue-400 transition-colors text-left w-full flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> IA System [cite: 135]</button></li>
-                        <li><button onclick="scrollToInsights()" class="hover:text-blue-400 transition-colors text-left w-full flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Insights & Trends [cite: 136]</button></li>
-                        <li><a href="politica-de-privacidade.html" class="hover:text-blue-400 transition-colors text-left w-full flex items-center gap-2"><i data-lucide="shield-check" class="w-3 h-3"></i> Privacidade </a></li>
-                    </ul>
-                </div>
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
 
-                <div class="flex flex-col items-start">
-                    <h4 class="text-white font-black uppercase tracking-widest text-[10px] mb-6 border-b border-white/10 pb-2 w-full">Mercado Livre [cite: 138]</h4>
-                    <ul class="space-y-4 text-xs text-slate-400 font-bold uppercase tracking-widest w-full">
-                        <li><button onclick="switchView('ml')" class="hover:text-yellow-400 transition-colors text-left w-full flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Performance Strategy [cite: 139]</button></li>
-                        <li><button onclick="switchView('ml')" class="hover:text-yellow-400 transition-colors text-left w-full flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Lucro Real [cite: 140]</button></li>
-                        <li><a href="termos-de-uso.html" class="hover:text-yellow-400 transition-colors text-left w-full flex items-center gap-2"><i data-lucide="file-text" class="w-3 h-3"></i> Termos de Uso </a></li>
-                    </ul>
-                </div>
+        .view-section { display: none; }
+        .view-section.active { display: block; animation: fade-in-up 0.5s ease-out; }
 
-                <div class="flex flex-col items-start">
-                    <h4 class="text-white font-black uppercase tracking-widest text-[10px] mb-6 border-b border-white/10 pb-2 w-full">Uplink [cite: 142]</h4>
-                    <div class="flex flex-col gap-5 w-full">
-                        <a href="https://www.instagram.com/harley.on2go" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group [cite: 143]">
-                            <div class="w-8 h-8 rounded-lg bg-slate-900 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-purple-500/50 transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></div>
-                            <span class="text-[10px] font-bold uppercase tracking-widest">Instagram</span>
-                        </a>
-                        <a href="https://open.spotify.com/show/5yDJlMkI7ZvwJgvmr8NPDA" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group">
-                            <div class="w-8 h-8 rounded-lg bg-slate-900 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-green-500/50 transition-colors overflow-hidden">
-                                <img src="https://i.ibb.co/W45zDTgD/spotify-3384019.jpg" class="w-full h-full object-cover" alt="Spotify">
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-[10px] font-bold uppercase tracking-widest group-hover:text-green-400">Spotify</span>
-                                <span class="text-[8px] text-slate-500 uppercase tracking-tighter">O Lado B da IA</span>
-                            </div>
-                        </a>
-                        <a href="https://t.me/on2go_ajuda_bot" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group">
-                            <div class="w-8 h-8 rounded-lg bg-slate-900 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-blue-400/50 transition-colors overflow-hidden">
-                                <img src="https://i.ibb.co/Nd8tzyHs/telegram-icon-6896828.jpg" class="w-full h-full object-cover" alt="Telegram">
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-[10px] font-bold uppercase tracking-widest group-hover:text-blue-400">Telegram</span>
-                                <span class="text-[8px] text-slate-500 uppercase tracking-tighter">Suporte Inteligente</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="pt-8 border-t border-white/5 text-[10px] uppercase font-bold tracking-widest text-slate-600 text-center">
-                <p>© 2026 ON2GO Intelligence System. All systems operational. [cite: 144]</p>
-            </div>
-        </div>
-    </footer>
+        .transition-all-custom { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        .bg-loop-container { position: relative; overflow: hidden; }
+        .bg-loop-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+            animation: kenburns 25s infinite alternate ease-in-out;
+            will-change: transform;
+        }
+        .bg-overlay-dark {
+            position: absolute;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.9); 
+            z-index: -1;
+            backdrop-filter: blur(2px);
+        }
+
+        @keyframes kenburns {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.12) translate(-1%, -1%); }
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <a href="https://wa.me/message/3JCMMEKUG24ME1" target="_blank" class="fixed bottom-8 right-8 z-[150] w-14 h-14 md:w-16 md:h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl animate-glow transition-transform hover:scale-110">
+        <i data-lucide="message-circle" class="w-6 h-6 md:w-8 md:h-8 text-white fill-current"></i>
+    </a>
+
+    <nav class="fixed w-full z-[100] glass top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 md:h-24">
+                <div class="flex items-center gap-3 cursor-pointer group" onclick="switchView('ia')">
+                    <img src="https://i.ibb.co/mWXRYLD/liftapp.png" class="w-8 h-8 md:w-10 md:h-10 object-contain group-hover:scale-110 transition-transform" alt="ON2GO Logo">
+                    <div class="flex flex-col">
+                        <span class="text-xl md:text-2xl font-black tracking-tighter text-white uppercase leading-none">ON2GO</span>
+                        <span id="logo-badge" class="text-[9px] md:text-[10px] text-blue-500 font-bold uppercase tracking-[0.3em] transition-all-custom">System</span>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center bg-slate-950/80 px-4 py-2 rounded-full border border-white/10 backdrop-blur-md gap-4">
+                    <button onclick="switchView('ia')" id="btn-ia" class="px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all-custom bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.3)]">
+                        IA Business
+                    </button>
+                    <div class="w-px h-4 bg-white/10"></div>
+                    <button onclick="switchView('ml')" id="btn-ml" class="px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all-custom text-slate-400 hover:text-white flex items-center gap-2">
+                        Mercado Livre
+                        <span class="bg-yellow-500 text-slate-950 text-[9px] px-1.5 py-0.5 rounded font-black">PRO</span>
+                    </button>
+                </div>
+
+                <div class="hidden md:flex items-center gap-4">
+                    <button onclick="scrollToInsights()" class="text-slate-400 hover:text-white text-[10px] font-black uppercase tracking-widest px-4 transition-colors">Insights</button>
+                    <a href="#contato" class="bg-white text-slate-950 px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-blue-50 transition-all-custom">
+                        Consultoria
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center gap-2">
+                    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="p-2 text-slate-400 hover:text-white flex flex-col items-center gap-1">
+                        <i data-lucide="home" class="w-5 h-5"></i>
+                        <span class="text-[8px] font-bold uppercase tracking-widest">Home</span>
+                    </button>
+                    <button onclick="scrollToInsights()" class="p-2 text-slate-400 hover:text-white flex flex-col items-center gap-1">
+                        <i data-lucide="newspaper" class="w-5 h-5"></i>
+                        <span class="text-[8px] font-bold uppercase tracking-widest">Insights</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="md:hidden flex gap-3 pb-4 pt-1">
+                 <button onclick="switchView('ia')" id="btn-ia-mobile" class="flex-1 h-12 rounded-xl text-xs font-black uppercase tracking-widest transition-all-custom bg-blue-600 text-white border border-blue-500/50 shadow-lg flex items-center justify-center">
+                    IA System
+                </button>
+                <button onclick="switchView('ml')" id="btn-ml-mobile" class="flex-1 h-12 rounded-xl text-xs font-black uppercase tracking-widest transition-all-custom bg-slate-900/50 text-slate-400 border border-white/10 flex items-center justify-center gap-2">
+                    M. Livre <span class="bg-yellow-500 text-slate-950 text-[9px] px-1 rounded font-bold">PRO</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-[120px] md:h-0"></div>
+
+    <main id="view-ia" class="view-section active">
+        
+        <section class="relative min-h-[90vh] flex items-center justify-center pt-10 px-6 overflow-hidden bg-loop-container">
+            <div class="bg-loop-image" style="background-image: url('https://i.ibb.co/8gtCJdqv/2151966705.jpg')"></div>
+            <div class="bg-overlay-dark opacity-85"></div>
+            <div class="absolute top-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none z-0"></div>
+
+            <div class="max-w-5xl mx-auto text-center relative z-10 space-y-6 md:space-y-8">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold uppercase tracking-[0.2em]">
+                    Infraestrutura de Automação ON2GO
+                </span>
+                <h1 class="text-4xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-[0.95] md:leading-[0.9]">
+                    Automatize Processos.<br>
+                    <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 gradient-text text-transparent">
+                        Escale Vendas.
+                    </span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
+                    Sistemas inteligentes que rodam 24/7. Liberte sua equipe do trabalho manual e foque no crescimento.
+                </p>
+                
+                <div class="flex flex-col md:flex-row justify-center gap-4 pt-4 md:pt-8 w-full md:w-auto">
+                    <a href="#ecossistema-ia" class="bg-blue-600 hover:bg-blue-500 text-white w-full md:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)] text-center">Ver Soluções</a>
+                    <a href="#contato" class="w-full md:w-auto px-8 py-4 rounded-xl border border-white/10 hover:bg-white/5 text-white font-bold uppercase tracking-widest text-sm transition-all text-center">Falar com Especialista</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="insights-ia" class="scroll-mt-32 py-24 px-6 relative z-10 border-t border-white/5 bg-slate-900/20">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div>
+                        <span class="text-blue-500 font-bold uppercase tracking-widest text-xs">Intelligence Hub</span>
+                        <h2 class="text-4xl font-black text-white uppercase tracking-tighter mt-2">Briefings Estratégicos</h2>
+                    </div>
+                    <a href="#" class="text-slate-400 hover:text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2 group transition-colors">
+                        Ver todo o arquivo <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <article class="md:col-span-2 group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 cursor-pointer">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://i.ibb.co/Xk4qH4GQ/ai-robot-gazing-code-futuristic-cyberpunk-vision.jpg');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-10 w-full">
+                            <span class="px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">Tendência 2026</span>
+                            <h3 class="text-3xl font-black text-white mb-2 leading-tight group-hover:text-blue-400 transition-colors">A Morte do Call Center Tradicional: Por que Agentes de Voz IA são Inevitáveis.</h3>
+                            <span class="inline-flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">Ler Briefing <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </article>
+                    <div class="space-y-8">
+                        <article class="group relative h-[184px] rounded-[2rem] overflow-hidden border border-white/10 cursor-pointer bg-slate-900">
+                            <div class="absolute inset-0 bg-cover bg-center opacity-40 transition-opacity group-hover:opacity-20" style="background-image: url('https://i.ibb.co/wNYTYv3j/artificial-intelligence-robot-working-futuristic-circuit-board.jpg');"></div>
+                            <div class="relative p-6 h-full flex flex-col justify-end">
+                                <span class="text-green-400 text-[10px] font-bold uppercase tracking-widest mb-2">Case Study</span>
+                                <h3 class="text-lg font-bold text-white leading-tight group-hover:text-green-400 transition-colors">Clínica Médica reduziu 40% das faltas com automação.</h3>
+                            </div>
+                        </article>
+                        <article class="group relative h-[184px] rounded-[2rem] overflow-hidden border border-white/10 cursor-pointer bg-slate-900">
+                             <div class="absolute inset-0 bg-cover bg-center opacity-40 transition-opacity group-hover:opacity-20" style="background-image: url('https://i.ibb.co/bjQC7qGJ/ai-robotic-arm-interacting-with-data-visualization.jpg');"></div>
+                            <div class="relative p-6 h-full flex flex-col justify-end">
+                                <span class="text-purple-400 text-[10px] font-bold uppercase tracking-widest mb-2">Tech Deep Dive</span>
+                                <h3 class="text-lg font-bold text-white leading-tight group-hover:text-purple-400 transition-colors">RAG vs Fine-Tuning: Qual a melhor arquitetura?</h3>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="relative h-[350px] overflow-hidden bg-loop-container border-y border-white/5">
+            <div class="bg-loop-image" style="background-image: url('https://i.ibb.co/CKXfRpKF/woman-8026954-1280.jpg'); background-position: center 20%;"></div>
+            <div class="bg-overlay-dark opacity-60"></div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+                <span class="text-blue-500 font-bold uppercase tracking-widest text-xs mb-2">Quem Somos</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">Parceiros Estratégicos de Tecnologia</h2>
+            </div>
+        </div>
+
+        <section class="py-20 px-6 bg-slate-950">
+            <div class="max-w-4xl mx-auto text-center space-y-6">
+                <h3 class="text-2xl font-bold text-white">Na prática, o que isso significa?</h3>
+                <p class="text-slate-400 leading-relaxed text-lg">
+                    Não somos apenas uma "agência". Somos engenheiros de sistemas. <br class="hidden md:block">
+                    Pegamos os processos manuais, lentos e caros da sua empresa e construímos <strong class="text-white">agentes digitais personalizados</strong> para executá-los. 
+                    Isso significa substituir o "copia e cola" humano por fluxos de dados instantâneos e sem erros.
+                </p>
+                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/5 mt-8">
+                    <div class="text-center">
+                        <span class="block text-2xl font-black text-white">24/7</span>
+                        <span class="text-[10px] text-slate-500 uppercase tracking-widest">Disponibilidade</span>
+                    </div>
+                    <div class="text-center border-x border-white/5">
+                        <span class="block text-2xl font-black text-white">Zero</span>
+                        <span class="text-[10px] text-slate-500 uppercase tracking-widest">Erro Humano</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-2xl font-black text-white">100%</span>
+                        <span class="text-[10px] text-slate-500 uppercase tracking-widest">Escalável</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ecossistema-ia" class="scroll-mt-32 py-32 px-6 relative z-10 bg-slate-900/30 border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="text-blue-500 font-bold uppercase tracking-widest text-xs">O Que Fazemos</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mt-4">Ecossistema de Automação</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-3xl group hover:bg-slate-800/50 transition-colors">
+                        <div class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center mb-6 border border-white/10"><i data-lucide="message-square" class="w-6 h-6 text-blue-400"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Agentes de Vendas (WhatsApp)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Robôs treinados com suas melhores técnicas de venda. Eles qualificam leads, respondem dúvidas, agendam reuniões e recuperam carrinhos abandonados no WhatsApp.
+                        </p>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl group hover:bg-slate-800/50 transition-colors">
+                        <div class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center mb-6 border border-white/10"><i data-lucide="database" class="w-6 h-6 text-blue-400"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Integração & APIs</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Fazemos seus softwares conversarem. Conectamos seu CRM (Salesforce, Hubspot) com seu ERP e banco de dados. Vendeu? A nota fiscal e logística disparam sozinhas.
+                        </p>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl group hover:bg-slate-800/50 transition-colors">
+                        <div class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center mb-6 border border-white/10"><i data-lucide="brain-circuit" class="w-6 h-6 text-blue-400"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Cérebros Corporativos (RAG)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Criamos uma IA que "lê" todos os PDFs, planilhas e históricos da sua empresa. Seus funcionários perguntam "Qual foi o faturamento de março?" e a IA responde na hora.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="relative h-[350px] overflow-hidden bg-loop-container border-y border-white/5">
+            <div class="bg-loop-image" style="background-image: url('https://i.ibb.co/CKvyYnDX/artificial-8264664-1280.jpg'); background-position: center;"></div>
+            <div class="bg-overlay-dark opacity-60"></div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+                <span class="text-blue-500 font-bold uppercase tracking-widest text-xs mb-2">Tecnologia Habilitada</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">Seu Exército Digital</h2>
+            </div>
+        </div>
+
+        <section class="py-20 px-6 relative z-10 bg-slate-950/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-900 border border-white/10 rounded-3xl p-8 hover:border-green-500/50 transition-colors">
+                        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 p-2"><img src="https://i.ibb.co/Z62h86Kc/openai-gpts.png" class="w-full h-full object-contain"></div>
+                        <h3 class="text-lg font-black text-white mb-2">OpenAI GPT-4o</h3>
+                        <p class="text-xs text-slate-400 mb-4 font-bold uppercase tracking-wider">O "Cérebro" Criativo</p>
+                        <p class="text-sm text-slate-500 leading-snug">Ideal para atendimento humanizado, criação de copy e raciocínio lógico avançado.</p>
+                    </div>
+                    <div class="bg-slate-900 border border-white/10 rounded-3xl p-8 hover:border-blue-500/50 transition-colors">
+                        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 p-1"><img src="https://i.ibb.co/6J1mvqsj/google-gemini-gem-seeklogo.jpg" class="w-full h-full object-cover rounded-lg"></div>
+                        <h3 class="text-lg font-black text-white mb-2">Google Gemini</h3>
+                        <p class="text-xs text-slate-400 mb-4 font-bold uppercase tracking-wider">Processamento de Dados</p>
+                        <p class="text-sm text-slate-500 leading-snug">Perfeito para ler planilhas gigantes, analisar grandes volumes de texto e integração com Google Sheets.</p>
+                    </div>
+                    <div class="bg-slate-900 border border-white/10 rounded-3xl p-8 hover:border-teal-500/50 transition-colors">
+                        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 p-2"><img src="https://i.ibb.co/VchdkNmT/perplexity-ai-icon-black-seeklogo.png" class="w-full h-full object-contain"></div>
+                        <h3 class="text-lg font-black text-white mb-2">Perplexity</h3>
+                        <p class="text-xs text-slate-400 mb-4 font-bold uppercase tracking-wider">Intel em Tempo Real</p>
+                        <p class="text-sm text-slate-500 leading-snug">Usamos para monitorar concorrentes e buscar informações atualizadas na web no segundo exato.</p>
+                    </div>
+                    <div class="bg-slate-900 border border-white/10 rounded-3xl p-8 hover:border-orange-500/50 transition-colors">
+                        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 p-1"><img src="https://i.ibb.co/pjyM9sK2/google-notebooklm-logo-icon.jpg" class="w-full h-full object-cover rounded-lg"></div>
+                        <h3 class="text-lg font-black text-white mb-2">Notebook Neural</h3>
+                        <p class="text-xs text-slate-400 mb-4 font-bold uppercase tracking-wider">Expert em Arquivos</p>
+                        <p class="text-sm text-slate-500 leading-snug">Treinamento profundo em manuais técnicos, PDFs jurídicos e documentação interna.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="relative h-[500px] overflow-hidden bg-loop-container border-y border-white/5">
+            <div class="bg-loop-image" style="background-image: url('https://i.ibb.co/Wv2f56v3/representation-user-experience-interface-design.jpg');"></div>
+            <div class="bg-overlay-dark opacity-80"></div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-6">
+                    A tecnologia não substitui a estratégia. <br><span class="text-blue-500">Ela a potencializa ao infinito.</span>
+                </h2>
+                <p class="text-slate-300 text-lg md:text-xl font-light leading-relaxed">
+                    Não vendemos "ferramentas mágicas". Vendemos uma infraestrutura robusta que permite sua estratégia brilhar sem as amarras da limitação humana. 
+                    <strong class="text-white">A estratégia é sua. A velocidade hipersônica é nossa.</strong>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <main id="view-ml" class="view-section">
+        <section class="relative min-h-[90vh] flex items-center justify-center pt-10 px-6 overflow-hidden bg-loop-container">
+            <div class="bg-loop-image" style="background-image: url('https://i.ibb.co/bjQC7qGJ/ai-robotic-arm-interacting-with-data-visualization.jpg')"></div>
+            <div class="bg-overlay-dark opacity-90"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-yellow-500/10 via-transparent to-transparent"></div>
+            
+            <div class="max-w-6xl mx-auto text-center relative z-10 space-y-6 md:space-y-8">
+                <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-[0_0_20px_rgba(255,215,0,0.4)] mb-4 animate-fade-in">
+                    <img src="https://i.ibb.co/SXQxT8yf/mercado-livre-seeklogo.png" class="h-6 w-auto">
+                    <span class="text-slate-900 font-bold text-[10px] uppercase tracking-widest border-l border-slate-200 pl-2">Certified Performance Strategy</span>
+                </div>
+                <h1 class="text-4xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-[0.95] md:leading-[0.9]">
+                    Transformamos Anúncios em<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 italic drop-shadow-[0_0_35px_rgba(250,204,21,0.3)]">
+                        Máquinas de Venda.
+                    </span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">A IA é o centro da nossa estratégia de performance no Mercado Livre.</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4 pt-4 md:pt-8 w-full md:w-auto">
+                    <a href="#pilares-ml" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 w-full md:w-auto px-8 py-4 rounded-xl font-black uppercase tracking-widest text-sm transition-all shadow-[0_0_30px_rgba(250,204,21,0.4)] text-center">Ver Estratégia</a>
+                    <a href="#calc-ml" class="w-full md:w-auto px-8 py-4 rounded-xl border border-white/10 hover:bg-white/5 text-white font-bold uppercase tracking-widest text-sm transition-all text-center">Calculadora de Lucro</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="radar-ml" class="scroll-mt-32 py-24 px-6 relative z-10 border-t border-white/5 bg-slate-900/20">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div>
+                        <span class="text-yellow-500 font-bold uppercase tracking-widest text-xs">Radar E-commerce</span>
+                        <h2 class="text-4xl font-black text-white uppercase tracking-tighter mt-2">Inteligência de Mercado</h2>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                      <article class="md:col-span-2 group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 cursor-pointer">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://i.ibb.co/bjQC7qGJ/ai-robotic-arm-interacting-with-data-visualization.jpg');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-10 w-full">
+                            <span class="px-3 py-1 rounded-full bg-yellow-400 text-slate-950 text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">Alerta 2026</span>
+                            <h3 class="text-3xl font-black text-white mb-2 leading-tight group-hover:text-yellow-400 transition-colors">
+                                As novas regras do algoritmo do Mercado Livre: Quem não usar IA vai perder relevância.
+                            </h3>
+                            <span class="inline-flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">Ler Relatório <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </article>
+                    <div class="space-y-8">
+                        <article class="group relative h-[184px] rounded-[2rem] overflow-hidden border border-white/10 cursor-pointer bg-slate-900">
+                             <div class="absolute inset-0 bg-cover bg-center opacity-40 transition-opacity group-hover:opacity-20" style="background-image: url('https://i.ibb.co/XrxL6gZH/image.png');"></div>
+                            <div class="relative p-6 h-full flex flex-col justify-end">
+                                <span class="text-yellow-500 text-[10px] font-bold uppercase tracking-widest mb-2">Hack de Crescimento</span>
+                                <h3 class="text-lg font-bold text-white leading-tight group-hover:text-yellow-400 transition-colors">Como o "Full Ads" reduz seu custo de aquisição pela metade.</h3>
+                            </div>
+                        </article>
+                        <article class="group relative h-[184px] rounded-[2rem] overflow-hidden border border-white/10 cursor-pointer bg-slate-900">
+                            <div class="absolute inset-0 bg-cover bg-center opacity-40 transition-opacity group-hover:opacity-20" style="background-image: url('https://i.ibb.co/bjQC7qGJ/ai-robotic-arm-interacting-with-data-visualization.jpg');"></div>
+                            <div class="relative p-6 h-full flex flex-col justify-end">
+                                <span class="text-green-400 text-[10px] font-bold uppercase tracking-widest mb-2">Finanças</span>
+                                <h3 class="text-lg font-bold text-white leading-tight group-hover:text-green-400 transition-colors">A armadilha do Faturamento Bruto: Por que sua margem está sumindo.</h3>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="relative h-[350px] overflow-hidden bg-loop-container border-y border-white/5">
+            <div class="bg-loop-image" style="background-image: url('https://i.ibb.co/CKXfRpKF/woman-8026954-1280.jpg'); background-position: center 20%;"></div>
+            <div class="bg-overlay-dark opacity-60"></div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+                <span class="text-yellow-500 font-bold uppercase tracking-widest text-xs mb-2">Quem Somos</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">Parceiros Estratégicos de Performance</h2>
+            </div>
+        </div>
+
+        <section class="py-20 px-6 bg-slate-950">
+            <div class="max-w-4xl mx-auto text-center space-y-6">
+                <h3 class="text-2xl font-bold text-white">Na prática, o que isso significa?</h3>
+                <p class="text-slate-400 leading-relaxed text-lg">
+                    Não somos uma agência de marketing que só "sobe campanhas". Somos estrategistas de lucro. <br class="hidden md:block">
+                    Muitos vendem milhões e lucram centavos. Nós usamos Inteligência Artificial para auditar suas taxas, otimizar seus anúncios e garantir que cada venda traga **dinheiro real** para o caixa da empresa.
+                </p>
+                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/5 mt-8">
+                    <div class="text-center">
+                        <span class="block text-2xl font-black text-white">Audit</span>
+                        <span class="text-[10px] text-slate-500 uppercase tracking-widest">Taxas & Custos</span>
+                    </div>
+                    <div class="text-center border-x border-white/5">
+                        <span class="block text-2xl font-black text-white">Ads</span>
+                        <span class="text-[10px] text-slate-500 uppercase tracking-widest">Alta Conversão</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-2xl font-black text-white">LTV</span>
+                        <span class="text-[10px] text-slate-500 uppercase tracking-widest">Lucro Real</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pilares-ml" class="scroll-mt-32 py-32 px-6 relative z-10 bg-slate-900/30 border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="text-yellow-500 font-bold uppercase tracking-widest text-xs">A Tríade do Lucro</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mt-4">Os 3 Pilares de Tração</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-3xl group hover:bg-slate-800/50 transition-colors">
+                        <div class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center mb-6 border border-white/10"><i data-lucide="crosshair" class="w-6 h-6 text-yellow-400"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Ads de Alta Precisão</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Paramos de "queimar dinheiro" em cliques curiosos. Nossa IA segmenta os anúncios para compradores prontos, aumentando o ROAS e diminuindo o ACOS drasticamente.
+                        </p>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl group hover:bg-slate-800/50 transition-colors">
+                        <div class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center mb-6 border border-white/10"><i data-lucide="tag" class="w-6 h-6 text-yellow-400"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Precificação Dinâmica</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Preço não é chute. Calculamos imposto, comissão, frete e custo fixo em tempo real para encontrar o "ponto doce" entre volume de vendas e margem de lucro saudável.
+                        </p>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl group hover:bg-slate-800/50 transition-colors">
+                        <div class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center mb-6 border border-white/10"><i data-lucide="truck" class="w-6 h-6 text-yellow-400"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Logística & Full</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Quem entrega rápido, vende mais. Ajudamos a gerenciar seu estoque no Full Fulfillment para ganhar o selo "Chega Amanhã" e explodir sua taxa de conversão.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="relative h-[350px] overflow-hidden bg-loop-container border-y border-white/5">
+            <div class="bg-loop-image" style="background-image: url('https://i.ibb.co/VcYyHtQc/robot-7768527-1280.jpg'); background-position: center;"></div>
+            <div class="bg-overlay-dark opacity-60"></div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-6">
+                    A tecnologia não substitui a estratégia. <br><span class="text-yellow-500">Ela a potencializa ao infinito.</span>
+                </h2>
+                <p class="text-slate-300 text-lg md:text-xl font-light leading-relaxed">
+                   No Mercado Livre, dados vencem opiniões. Nossa infraestrutura de IA analisa o mercado em tempo real para posicionar seus anúncios onde o lucro é maior.
+                </p>
+            </div>
+        </div>
+
+        <section class="py-20 px-6 relative z-10 bg-slate-950/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-900 border border-white/10 rounded-3xl p-8 hover:border-yellow-500/50 transition-colors">
+                         <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 p-2">
+                             <i data-lucide="bar-chart-2" class="w-8 h-8 text-slate-900"></i>
+                          </div>
+                        <h3 class="text-lg font-black text-white mb-2">Análise de Mercado</h3>
+                        <p class="text-xs text-slate-400 mb-4 font-bold uppercase tracking-wider">Real Trends / Nubimetrics</p>
+                        <p class="text-sm text-slate-500 leading-snug">
+                            Monitoramos seus concorrentes 24h. Sabemos o que vendem, quanto vendem e por qual preço, para você atacar nas brechas.
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 border border-white/10 rounded-3xl p-8 hover:border-blue-500/50 transition-colors">
+                        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 p-2">
+                            <i data-lucide="zap" class="w-8 h-8 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-lg font-black text-white mb-2">Meli Ads Pro</h3>
+                        <p class="text-xs text-slate-400 mb-4 font-bold uppercase tracking-wider">Algoritmo Nativo</p>
+                        <p class="text-sm text-slate-500 leading-snug">
+                            Gestão profissional de Product Ads e Display. Maximizamos o CTR e reduzimos o desperdício de verba publicitária.
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 border border-white/10 rounded-3xl p-8 hover:border-green-500/50 transition-colors">
+                         <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 p-2">
+                            <i data-lucide="calculator" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                        <h3 class="text-lg font-black text-white mb-2">Calculadora ON2GO</h3>
+                        <p class="text-xs text-slate-400 mb-4 font-bold uppercase tracking-wider">Saúde Financeira</p>
+                        <p class="text-sm text-slate-500 leading-snug">
+                            Nossa ferramenta proprietária que simula cenários de lucro líquido antes mesmo de você comprar o estoque.
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 border border-white/10 rounded-3xl p-8 hover:border-purple-500/50 transition-colors">
+                        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 p-2">
+                            <i data-lucide="pen-tool" class="w-8 h-8 text-purple-600"></i>
+                        </div>
+                        <h3 class="text-lg font-black text-white mb-2">Copy & Design</h3>
+                        <p class="text-xs text-slate-400 mb-4 font-bold uppercase tracking-wider">Conversão Visual</p>
+                        <p class="text-sm text-slate-500 leading-snug">
+                            Títulos otimizados para SEO e imagens de alta conversão que destacam seu produto no meio da multidão.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA ALTERADO -->
+        <section class="py-32 px-6 relative bg-loop-container">
+            <div class="bg-loop-image" style="background-image: url('https://i.ibb.co/XrxL6gZH/image.png');"></div>
+            <div class="bg-overlay-dark opacity-90"></div>
+            <div class="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 gap-20 items-center">
+                <div class="space-y-8 text-white">
+                    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter">Resultados Comprovados</h2>
+                    <div class="p-4 bg-slate-900/80 rounded-xl border border-white/10 flex justify-between items-center text-xs">
+                        <span class="text-slate-400 uppercase font-bold tracking-widest">Taxa de Conversão</span>
+                        <span class="text-green-400 font-black">+35% Growth</span>
+                    </div>
+                </div>
+                <div class="glass p-10 rounded-[3rem] border border-white/10">
+                    <h3 class="text-2xl font-black text-white uppercase mb-6">Análise Algorítmica do Seu Mercado Livre</h3>
+                    <p class="text-slate-300 text-sm mb-8">Análise completa da sua conta com estratégia de escala.</p>
+                    <a href="#contato" class="inline-block w-full bg-yellow-400 text-slate-900 px-8 py-4 rounded-xl font-black uppercase text-sm text-center">Solicitar Análise Algorítmica</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOVA SEÇÃO MÉTODO -->
+        <section id="metodo-ml" class="scroll-mt-32 py-32 px-6 bg-slate-950 border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="text-yellow-400 font-bold uppercase tracking-widest text-xs">
+                        Método Proprietário
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mt-4">
+                        Método On2Go Mercado Livre com IA
+                    </h2>
+                    <p class="text-slate-400 max-w-3xl mx-auto mt-6 text-lg">
+                        Um sistema estruturado para transformar anúncios em ativos de venda previsíveis,
+                        escaláveis e orientados a margem.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-5 gap-6">
+                    <div class="glass-card p-8 rounded-3xl">
+                        <span class="text-yellow-400 font-black text-2xl">01</span>
+                        <h3 class="text-white font-bold mt-4 mb-2">Diagnóstico Algorítmico</h3>
+                        <p class="text-slate-400 text-sm">
+                            Análise profunda de anúncios, categorias, concorrência, palavras-chave e
+                            comportamento do algoritmo do Mercado Livre.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl">
+                        <span class="text-yellow-400 font-black text-2xl">02</span>
+                        <h3 class="text-white font-bold mt-4 mb-2">Reestruturação com IA</h3>
+                        <p class="text-slate-400 text-sm">
+                            Títulos, descrições e atributos otimizados automaticamente com foco em SEO,
+                            clique e conversão.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl">
+                        <span class="text-yellow-400 font-black text-2xl">03</span>
+                        <h3 class="text-white font-bold mt-4 mb-2">Escala com Mercado Ads</h3>
+                        <p class="text-slate-400 text-sm">
+                            Campanhas criadas e ajustadas por dados reais, reduzindo desperdício e
+                            maximizando retorno.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl">
+                        <span class="text-yellow-400 font-black text-2xl">04</span>
+                        <h3 class="text-white font-bold mt-4 mb-2">Otimização Contínua</h3>
+                        <p class="text-slate-400 text-sm">
+                            A IA monitora performance, testa variações e ajusta anúncios de forma contínua.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl">
+                        <span class="text-yellow-400 font-black text-2xl">05</span>
+                        <h3 class="text-white font-bold mt-4 mb-2">Margem e Previsibilidade</h3>
+                        <p class="text-slate-400 text-sm">
+                            Decisões baseadas em lucro real, não apenas volume de vendas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOVA SEÇÃO PROVA SOCIAL -->
+        <section class="py-32 px-6 bg-slate-900/30 border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-yellow-400 font-bold uppercase tracking-widest text-xs">
+                        Provas Reais
+                    </span>
+                    <h2 class="text-4xl font-black text-white uppercase tracking-tighter mt-4">
+                        Resultados na Prática
+                    </h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto mt-4">
+                        Conversas reais, dados reais e impacto direto no faturamento.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-6">
+                    <img src="https://i.ibb.co/JRwdcNWS/Whats-App-Image-2026-01-21-at-17-42-05.jpg"
+                         class="rounded-2xl border border-white/10 hover:scale-105 transition-transform">
+                    <img src="https://i.ibb.co/VYhBV6SM/Whats-App-Image-2026-01-21-at-17-42-06-1.jpg"
+                         class="rounded-2xl border border-white/10 hover:scale-105 transition-transform">
+                    <img src="https://i.ibb.co/zWNgVV2D/Whats-App-Image-2026-01-21-at-17-42-06-2.jpg"
+                         class="rounded-2xl border border-white/10 hover:scale-105 transition-transform">
+                    <img src="https://i.ibb.co/MxFmdPyD/Whats-App-Image-2026-01-21-at-17-42-06.jpg"
+                         class="rounded-2xl border border-white/10 hover:scale-105 transition-transform">
+                </div>
+            </div>
+        </section>
+
+        <section id="calc-ml" class="scroll-mt-32 py-24 px-6 border-t border-white/5">
+            <div class="max-w-4xl mx-auto glass p-10 rounded-[3rem] border border-white/10">
+                <div class="text-center mb-8">
+                     <h3 class="text-2xl font-black text-white uppercase mb-2">Calculadora de Lucro Real</h3>
+                     <p class="text-slate-400 text-xs">Simule o preço de venda considerando todas as taxas.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-bold text-slate-500 uppercase">Custo Produto (R$)</label>
+                            <input type="number" id="mlCusto" value="50" class="w-full bg-slate-950 border border-white/10 rounded-xl p-3 text-white text-xs outline-none focus:border-yellow-400" oninput="recalcML()">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-bold text-slate-500 uppercase">Margem Desejada (%)</label>
+                            <input type="number" id="mlMargem" value="20" class="w-full bg-slate-950 border border-white/10 rounded-xl p-3 text-white text-xs outline-none focus:border-yellow-400" oninput="recalcML()">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold text-slate-500 uppercase">Imposto (%)</label>
+                                <input type="number" id="mlImposto" value="6" class="w-full bg-slate-950 border border-white/10 rounded-xl p-3 text-white text-xs outline-none focus:border-yellow-400" oninput="recalcML()">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold text-slate-500 uppercase">Frete (R$)</label>
+                                <input type="number" id="mlFrete" value="0" class="w-full bg-slate-950 border border-white/10 rounded-xl p-3 text-white text-xs outline-none focus:border-yellow-400" oninput="recalcML()">
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-bold text-slate-500 uppercase">Tipo Anúncio</label>
+                            <select id="mlTipo" class="w-full bg-slate-950 border border-white/10 rounded-xl p-3 text-white text-xs outline-none" onchange="recalcML()">
+                                <option value="12">Clássico (12%)</option>
+                                <option value="17" selected>Premium (17%)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-400 rounded-[2rem] p-8 text-center flex flex-col justify-center shadow-[0_0_30px_rgba(250,204,21,0.2)]">
+                        <p class="text-slate-900 font-bold uppercase text-[10px] tracking-widest mb-2">Venda Sugerida:</p>
+                        <h3 id="mlPrecoFinal" class="text-4xl font-black text-slate-900 tracking-tighter">R$ 0,00</h3>
+                        <div class="w-full h-px bg-slate-900/10 my-4"></div>
+                        <div class="flex justify-between text-slate-900 text-xs font-bold">
+                             <span>Lucro: <span id="mlLucroVal">R$ 0,00</span></span>
+                             <span>Taxas: <span id="mlTaxasVal">R$ 0,00</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="relative h-[500px] overflow-hidden bg-loop-container border-y border-white/5">
+            <div class="bg-loop-image" style="background-image: url('https://i.ibb.co/Xk4qH4GQ/ai-robot-gazing-code-futuristic-cyberpunk-vision.jpg');"></div>
+            <div class="bg-overlay-dark opacity-80"></div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-6">
+                    A tecnologia não substitui a estratégia. <br><span class="text-yellow-500">Ela a potencializa ao infinito.</span>
+                </h2>
+                <p class="text-slate-300 text-lg md:text-xl font-light leading-relaxed">
+                   No Mercado Livre, dados vencem opiniões. Nossa infraestrutura de IA analisa o mercado em tempo real para posicionar seus anúncios onde o lucro é maior.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <section id="contato" class="py-32 px-6 bg-slate-950 relative bg-loop-container">
+        <div class="bg-loop-image" style="background-image: url('https://i.ibb.co/mrDxtfn7/2151966724.jpg'); background-position: center 20%;"></div>
+        <div class="bg-overlay-dark opacity-90"></div>
+        <div class="max-w-3xl mx-auto text-center space-y-8 relative z-10">
+            <h2 class="text-4xl font-black text-white uppercase tracking-tighter">Pronto para assumir o controle?</h2>
+            <div class="glass p-8 md:p-12 rounded-[2.5rem] border border-white/10 backdrop-blur-2xl text-left">
+                <form id="leadForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" id="leadName" required placeholder="Nome" class="w-full bg-slate-900/50 border border-white/10 rounded-xl p-4 text-white outline-none focus:border-blue-500 transition-colors">
+                        <input type="text" id="leadCompany" required placeholder="Empresa" class="w-full bg-slate-900/50 border border-white/10 rounded-xl p-4 text-white outline-none focus:border-blue-500 transition-colors">
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="tel" id="leadPhone" required placeholder="Celular" class="w-full bg-slate-900/50 border border-white/10 rounded-xl p-4 text-white outline-none focus:border-blue-500 transition-colors">
+                        <input type="email" id="leadEmail" required placeholder="Email" class="w-full bg-slate-900/50 border border-white/10 rounded-xl p-4 text-white outline-none focus:border-blue-500 transition-colors">
+                    </div>
+                    <button type="submit" class="w-full bg-white text-slate-950 font-black uppercase tracking-widest py-6 rounded-2xl hover:bg-blue-50 transition-all text-lg mt-4 shadow-lg">Enviar Solicitação</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative bg-slate-950 pt-24 pb-12 px-6 border-t border-blue-900/20">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid md:grid-cols-4 gap-12 mb-20 text-left">
+                
+                <div class="flex flex-col items-start space-y-6">
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.ibb.co/mWXRYLD/liftapp.png" class="w-8 h-8 opacity-80" alt="ON2GO">
+                        <span class="text-xl font-black text-white tracking-tighter uppercase">ON2GO</span>
+                    </div>
+                    <div class="text-[10px] font-bold text-green-400 uppercase tracking-widest bg-green-900/10 inline-flex px-3 py-1 rounded-full border border-green-500/20">System Online v4.0</div>
+                </div>
+
+                <div class="flex flex-col items-start">
+                    <h4 class="text-white font-black uppercase tracking-widest text-[10px] mb-6 border-b border-white/10 pb-2 w-full">IA Business</h4>
+                    <ul class="space-y-4 text-xs text-slate-400 font-bold uppercase tracking-widest w-full">
+                        <li><button onclick="switchView('ia')" class="hover:text-blue-400 transition-colors text-left w-full flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> IA System</button></li>
+                        <li><button onclick="scrollToInsights()" class="hover:text-blue-400 transition-colors text-left w-full flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Insights & Trends</button></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col items-start">
+                    <h4 class="text-white font-black uppercase tracking-widest text-[10px] mb-6 border-b border-white/10 pb-2 w-full">Mercado Livre</h4>
+                    <ul class="space-y-4 text-xs text-slate-400 font-bold uppercase tracking-widest w-full">
+                        <li><button onclick="switchView('ml')" class="hover:text-yellow-400 transition-colors text-left w-full flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Performance Strategy</button></li>
+                        <li><button onclick="switchView('ml')" class="hover:text-yellow-400 transition-colors text-left w-full flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Lucro Real</button></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col items-start">
+                    <h4 class="text-white font-black uppercase tracking-widest text-[10px] mb-6 border-b border-white/10 pb-2 w-full">Uplink</h4>
+                    <div class="flex flex-col gap-5 w-full">
+                        <a href="https://www.instagram.com/harley.on2go" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group">
+                            <div class="w-8 h-8 rounded-lg bg-slate-900 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-purple-500/50 transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest">Instagram</span>
+                        </a>
+                        <a href="https://open.spotify.com/show/5yDJlMkI7ZvwJgvmr8NPDA" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group">
+                            <div class="w-8 h-8 rounded-lg bg-slate-900 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-green-500/50 transition-colors overflow-hidden">
+                                <img src="https://i.ibb.co/W45zDTgD/spotify-3384019.jpg" class="w-full h-full object-cover" alt="Spotify">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-[10px] font-bold uppercase tracking-widest group-hover:text-green-400">Spotify</span>
+                                <span class="text-[8px] text-slate-500 uppercase tracking-tighter">O Lado B da IA</span>
+                            </div>
+                        </a>
+                        <a href="https://t.me/on2go_ajuda_bot" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group">
+                            <div class="w-8 h-8 rounded-lg bg-slate-900 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-blue-400/50 transition-colors overflow-hidden">
+                                <img src="https://i.ibb.co/Nd8tzyHs/telegram-icon-6896828.jpg" class="w-full h-full object-cover" alt="Telegram">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-[10px] font-bold uppercase tracking-widest group-hover:text-blue-400">Telegram</span>
+                                <span class="text-[8px] text-slate-500 uppercase tracking-tighter">Suporte Inteligente</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 text-[10px] uppercase font-bold tracking-widest text-slate-600 text-center">
+                <p>© 2026 ON2GO Intelligence System. All systems operational.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchView(view) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            
+            const btnIA = document.getElementById('btn-ia');
+            const btnML = document.getElementById('btn-ml');
+            const btnIAMobile = document.getElementById('btn-ia-mobile');
+            const btnMLMobile = document.getElementById('btn-ml-mobile');
+            const badge = document.getElementById('logo-badge');
+            
+            const inactiveClass = "px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all-custom text-slate-400 hover:text-white";
+            const mobileInactive = "flex-1 h-12 rounded-xl text-xs font-black uppercase tracking-widest transition-all-custom bg-slate-900/50 text-slate-400 border border-white/10 flex items-center justify-center gap-2";
+            
+            btnIA.className = inactiveClass;
+            btnML.className = inactiveClass + " flex items-center gap-2";
+            btnIAMobile.className = mobileInactive;
+            btnMLMobile.className = mobileInactive;
+
+            if (view === 'ia') {
+                document.getElementById('view-ia').classList.add('active');
+                btnIA.classList.add('bg-blue-600', 'text-white', 'shadow-[0_0_20px_rgba(37,99,235,0.3)]');
+                btnIAMobile.className = "flex-1 h-12 rounded-xl text-xs font-black uppercase tracking-widest transition-all-custom bg-blue-600 text-white border border-blue-500/50 shadow-lg flex items-center justify-center";
+                badge.innerText = "SYSTEM";
+                badge.className = "text-[9px] md:text-[10px] text-blue-500 font-bold uppercase tracking-[0.3em] transition-all-custom";
+            } else {
+                document.getElementById('view-ml').classList.add('active');
+                btnML.classList.add('bg-yellow-400', 'text-slate-950', 'shadow-[0_0_20px_rgba(250,204,21,0.3)]');
+                btnMLMobile.className = "flex-1 h-12 rounded-xl text-xs font-black uppercase tracking-widest transition-all-custom bg-yellow-400 text-slate-900 border border-yellow-500/50 shadow-lg flex items-center justify-center gap-2";
+                badge.innerText = "MARKETPLACE";
+                badge.className = "text-[9px] md:text-[10px] text-yellow-500 font-bold uppercase tracking-[0.3em] transition-all-custom";
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            lucide.createIcons();
+        }
+
+        // Função inteligente de Scroll (Verifica qual aba está ativa)
+        function scrollToInsights() {
+            const isML = document.getElementById('view-ml').classList.contains('active');
+            const targetId = isML ? 'radar-ml' : 'insights-ia';
+            
+            const el = document.getElementById(targetId);
+            if(el) { el.scrollIntoView({ behavior: 'smooth' }); }
+        }
+
+        function recalcML() {
+            const el = (id) => document.getElementById(id);
+            const c = parseFloat(el('mlCusto').value) || 0;
+            const m = parseFloat(el('mlMargem').value) || 0;
+            const i = parseFloat(el('mlImposto').value) || 0;
+            const f = parseFloat(el('mlFrete').value) || 0;
+            const t = parseFloat(el('mlTipo').value) || 0;
+
+            const divisor = 1 - (m + i + t) / 100;
+            if (divisor <= 0) { el('mlPrecoFinal').innerText = "Erro"; return; }
+
+            let p = (c + f) / divisor;
+            const fmt = (n) => n.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            el('mlPrecoFinal').innerText = `R$ ${fmt(p)}`;
+            el('mlLucroVal').innerText = `R$ ${fmt(p * (m/100))}`;
+            el('mlTaxasVal').innerText = `R$ ${fmt(p * ((i+t)/100))}`;
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('leadName').value;
+            const company = document.getElementById('leadCompany').value;
+            const phone = document.getElementById('leadPhone').value;
+            const email = document.getElementById('leadEmail').value;
+            const isML = document.getElementById('view-ml').classList.contains('active');
+            const interest = isML ? "Performance Mercado Livre" : "IA Business";
+            const message = `🚀 *Lead ON2GO!*%0A%0A*Nome:* ${name}%0A*Empresa:* ${company}%0A*Interesse:* ${interest}%0A*Tel:* ${phone}%0A*Email:* ${email}`;
+            window.open(`https://api.whatsapp.com/send?phone=5511999999999&text=${message}`, '_blank');
+        }
+
+        window.onload = () => { lucide.createIcons(); recalcML(); };
+    </script>
+</body>
+</html>
